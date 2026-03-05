@@ -1,0 +1,62 @@
+[
+{
+"id":"1",
+"nombre":"Ana Pérez",
+"seccion":"10-2",
+"procedencia":"San Pablo",
+"encargado":"María Pérez",
+"telefono":"88880000",
+"beca":"IMAS",
+"ruta":"Ruta 3",
+"condicion":"",
+"observaciones":""
+},
+{
+"id":"2",
+"nombre":"Luis Rodríguez",
+"seccion":"11-1",
+"procedencia":"San Marcos",
+"encargado":"Carlos Rodríguez",
+"telefono":"87771111",
+"beca":"Transporte",
+"ruta":"Ruta 2",
+"condicion":"Asma",
+"observaciones":"Evitar ejercicio intenso"
+},
+{
+"id":"3",
+"nombre":"Daniel Vargas",
+"seccion":"9-3",
+"procedencia":"San Lorenzo",
+"encargado":"Rosa Vargas",
+"telefono":"88554422",
+"beca":"No tiene",
+"ruta":"No usa",
+"condicion":"",
+"observaciones":""
+},
+{
+"id":"4",
+"nombre":"María González",
+"seccion":"8-1",
+"procedencia":"Santa María",
+"encargado":"José González",
+"telefono":"88997766",
+"beca":"Comedor",
+"ruta":"Ruta 1",
+"condicion":"Diabetes",
+"observaciones":"Controlar alimentación"
+},
+{
+"id":"5",
+"nombre":"Carlos Ramírez",
+"seccion":"11-3",
+"procedencia":"San Pablo",
+"encargado":"Marta Ramírez",
+"telefono":"88445566",
+"beca":"IMAS",
+"ruta":"Ruta 4",
+"condicion":"",
+"observaciones":"Pendiente documentos"
+}
+]
