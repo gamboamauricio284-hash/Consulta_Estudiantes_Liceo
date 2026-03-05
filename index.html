@@ -44,29 +44,13 @@ box-shadow:0 2px 6px rgba(0,0,0,0.1);
 
 <script>
 
-const estudiantes = [
+let estudiantes = [];
 
-{
-nombre:"Ana Pérez",
-seccion:"10-2",
-procedencia:"San Pablo",
-encargado:"María Pérez",
-telefono:"8888-0000",
-estado:"Seguimiento",
-transporte:"Ruta 3"
-},
-
-{
-nombre:"Luis Rodríguez",
-seccion:"11-1",
-procedencia:"San Marcos",
-encargado:"Carlos Rodríguez",
-telefono:"8777-1111",
-estado:"Al día",
-transporte:"No usa ruta"
-}
-
-];
+fetch("estudiantes.json")
+.then(res => res.json())
+.then(data => {
+estudiantes = data;
+});
 
 function buscar(){
 
