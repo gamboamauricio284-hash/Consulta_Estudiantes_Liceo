@@ -44,12 +44,12 @@ box-shadow:0 2px 6px rgba(0,0,0,0.1);
 
 <script>
 
-let estudiantes = [];
+let estudaintes = [];
 
-fetch("estudiantes.json")
+fetch("estudaintes.json")
 .then(res => res.json())
 .then(data => {
-estudiantes = data;
+estudaintes = data;
 });
 
 function buscar(){
@@ -58,7 +58,7 @@ let texto = document.getElementById("buscar").value.toLowerCase();
 
 let salida="";
 
-estudiantes.forEach(e=>{
+estudaantes.forEach(e=>{
 
 if(e.nombre.toLowerCase().includes(texto)){
 
