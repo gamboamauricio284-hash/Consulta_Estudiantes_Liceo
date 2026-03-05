@@ -43,14 +43,47 @@ box-shadow:0 2px 6px rgba(0,0,0,0.1);
 <div id="resultados"></div>
 
 <script>
-
 let estudiantes = [];
 
-fetch("estudiantes.json")
-.then(res => res.json())
-.then(data => {
-estudiantes = data;
-});
+async function cargarDatos(){
+  try{
+    const res = await fetch("estudiantes.json", { cache: "no-store" });
+    if(!res.ok) throw new Error("No se pudo cargar estudiantes.json (HTTP " + res.status + ")");
+    estudiantes = await res.json();
+    // (opcional) Mostrar cuántos cargó
+    console.log("Cargados:", estudiantes.length);
+  }catch(err){
+    console.error(err);
+    document.getElementById("resultados").innerHTML =
+      "<div class='card'><b>Error:</b> No se pudo cargar <code>estudiantes.json</code>. Revisa que exista y esté en la raíz del repositorio.</div>";
+  }
+}
+
+function buscar(){
+  const texto = document.getElementById("buscar").value.toLowerCase();
+  let salida = "";
+
+  estudiantes.forEach(e=>{
+    if((e.nombre || "").toLowerCase().includes(texto)){
+      salida += `
+        <div class="card">
+          <b>${e.nombre || ""}</b><br>
+          Sección: ${e.seccion || ""}<br>
+          Procedencia: ${e.procedencia || ""}<br>
+          Encargado: ${e.encargado || ""}<br>
+          Teléfono: ${e.telefono || ""}<br>
+          Beca: ${e.beca || ""}<br>
+          Ruta: ${e.ruta || ""}
+        </div>
+      `;
+    }
+  });
+
+  document.getElementById("resultados").innerHTML = salida || "<div class='card'>Sin resultados.</div>";
+}
+
+document.getElementById("buscar").addEventListener("input", buscar);
+cargarDatos();
 </script>
 
 </body>
